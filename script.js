@@ -11,15 +11,16 @@ $(document).ready(function (){
   var hours = $(".hours")
   function readTextFromStorage() {
     var textContent = localStorage.getItem('textContent');
-    if (inputText) {
-      inputText = JSON.parse(textContent);
+    if (inputTexts) {
+      inputTexts = JSON.parse(textContent);
     } else {
-      inputText = [];
+      inputTexts = [];
     }
-    return inputText;
+    return inputTexts;
     function saveProjectsToStorage(inputText) {
       localStorage.setItem('textContent', JSON.stringify(inputText));
   }
+}
   function printProjectData() {
     // clear current projects on the page
     projectDisplayEl.empty();
@@ -28,7 +29,7 @@ $(document).ready(function (){
     var projects = readProjectsFromStorage();
   
     // loop through each project and create a row
-    for (var i = 0; i < projects.length; i += 1) {
+    for (var i = 0; i < inputTexts.length; i += 1) {
       var project = projects[i];
     }
   }
